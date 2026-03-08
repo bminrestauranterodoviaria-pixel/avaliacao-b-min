@@ -1,114 +1,189 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Avalie o B,min</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body{
-      margin:0;
-      font-family:Arial,Helvetica,sans-serif;
-      background:#f2f4f6;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      min-height:100vh;
-    }
-    .card{
-      background:#fff;
-      width:100%;
-      max-width:420px;
-      border-radius:18px;
-      box-shadow:0 10px 25px rgba(0,0,0,.08);
-      overflow:hidden;
-      text-align:center;
-    }
-    .banner{
-      width:100%;
-      display:block;
-    }
-    .content{
-      padding:22px 20px 26px;
-    }
-    h1{
-      font-size:20px;
-      margin:0 0 6px;
-      color:#222;
-    }
-    p{
-      font-size:14px;
-      color:#555;
-      margin:0 0 18px;
-      line-height:1.4;
-    }
-    .stars{
-      display:flex;
-      justify-content:center;
-      gap:10px;
-      font-size:36px;
-      cursor:pointer;
-    }
-    .star{
-      color:#ccc;
-      transition:transform .15s ease,color .15s ease;
-      user-select:none;
-    }
-    .star:hover{
-      transform:scale(1.2);
-      color:#f5b301;
-    }
-    .footer{
-      margin-top:18px;
-      font-size:12px;
-      color:#888;
-    }
-  </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>B.MIN Restaurante</title>
+
+<style>
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+background: linear-gradient(135deg,#8B0000,#c0392b);
+margin:0;
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+}
+
+.container{
+
+background:white;
+width:90%;
+max-width:420px;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+text-align:center;
+
+}
+
+.logo{
+
+width:100%;
+border-radius:10px;
+margin-bottom:20px;
+
+}
+
+h1{
+
+margin:10px 0;
+color:#8B0000;
+
+}
+
+h2{
+
+font-size:18px;
+font-weight:normal;
+color:#555;
+margin-bottom:25px;
+
+}
+
+.stars{
+
+display:flex;
+justify-content:center;
+gap:10px;
+margin-bottom:25px;
+
+}
+
+.star{
+
+font-size:45px;
+cursor:pointer;
+color:#ccc;
+transition:0.2s;
+
+}
+
+.star:hover,
+.star.active{
+
+color:#FFD700;
+transform:scale(1.1);
+
+}
+
+.btn{
+
+display:block;
+width:100%;
+padding:14px;
+margin-top:12px;
+border:none;
+border-radius:8px;
+font-size:17px;
+color:white;
+text-decoration:none;
+
+}
+
+.cardapio{
+
+background:#8B0000;
+
+}
+
+.whatsapp{
+
+background:#25D366;
+
+}
+
+footer{
+
+margin-top:20px;
+font-size:13px;
+color:#888;
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-  <div class="card">
-    <!-- IMAGEM PRINCIPAL -->
-    <img src="banner-avaliacao.png" alt="Avaliação B.min" class="banner">
+<div class="container">
 
-    <div class="content">
-      <h1>Como foi sua experiência?</h1>
-      <p>Toque nas estrelas para avaliar o B,min restaurante e lanchonete</p>
+<img src="banner-avaliacao.png" class="logo">
 
-      <div class="stars">
-        <span class="star" onclick="avaliar(1)">★</span>
-        <span class="star" onclick="avaliar(2)">★</span>
-        <span class="star" onclick="avaliar(3)">★</span>
-        <span class="star" onclick="avaliar(4)">★</span>
-        <span class="star" onclick="avaliar(5)">★</span>
-      </div>
+<h1>B.MIN Restaurante</h1>
 
-      <div style="margin-top:30px;">
-  <a href="CARDAPIO.pdf" target="_blank"
-  style="display:inline-block;background:#b30000;color:white;
-  padding:15px 25px;font-size:18px;border-radius:10px;
-  text-decoration:none;font-weight:bold;">
-  📖 Ver Cardápio Digital
-  </a>
+<h2>Como foi sua experiência?</h2>
+
+<div class="stars">
+
+<span class="star" onclick="rate(1)">★</span>
+<span class="star" onclick="rate(2)">★</span>
+<span class="star" onclick="rate(3)">★</span>
+<span class="star" onclick="rate(4)">★</span>
+<span class="star" onclick="rate(5)">★</span>
+
 </div>
-  
-      <div class="footer">
-        Sua opinião nos ajuda a melhorar todos os dias
-      </div>
-    </div>
-  </div>
+
+<a href="CARDAPIO.pdf" target="_blank" class="btn cardapio">
+📖 Ver Cardápio
+</a>
+
+<a href="https://wa.me/5548999110086" target="_blank" class="btn whatsapp">
+💬 Falar no WhatsApp
+</a>
+
+<footer>
+Obrigado pela sua visita ❤️
+</footer>
+
+</div>
 
 <script>
-  // 🔁 TROQUE ESTES LINKS
-  const GOOGLE_URL = "https://www.google.com/search?sca_esv=b7582afb3eadf454&sxsrf=ANbL-n7i9Pn8XT994Ot9UIRyTmrP2nGaVg:1769792933911&q=restaurante+b,min&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOV2FQ6jpBtnppY8JrQ4pSZ9KbFd_mbJfIOd1EaFQ2mPqKU06CbkUofphvrGm0UslDsXd8pHalZL_vEqlX-DlT4YS-kMeFizqOfPisy7oZI07I5_umQ%3D%3D&sa=X&ved=2ahUKEwjeiZu54LOSAxV8rJUCHcknMIgQrrQLegQIHBAA&biw=1422&bih=612&dpr=1.35&aic=0";
-  const FORM_INTERNO_URL = "https://docs.google.com/forms/d/e/1FAIpQLSet07JYdALkic6AWeK6bVdxqcFgohAT9tp03yPqkTt159jDtQ/viewform";
 
-  function avaliar(nota){
-    if(nota >= 4){
-      window.location.href = GOOGLE_URL;
-    } else {
-      window.location.href = FORM_INTERNO_URL;
-    }
-  }
+let stars = document.querySelectorAll('.star');
+
+stars.forEach((star,index)=>{
+
+star.addEventListener("mouseover",()=>{
+
+stars.forEach((s,i)=>{
+s.classList.toggle("active",i<=index);
+});
+
+});
+
+});
+
+function rate(n){
+
+if(n<=3){
+
+window.location.href="https://docs.google.com/forms/d/e/1FAIpQLSet07JYdALkic6AWeK6bVdxqcFgohAT9tp03yPqkTt159jDtQ/viewform";
+
+}else{
+
+window.location.href="https://www.google.com/search?q=restaurante+b,min";
+
+}
+
+}
+
 </script>
 
 </body>
